@@ -9,7 +9,7 @@ namespace GenericsTestMax
     public class FindMaximum
 
     {
-        public static int MaximumIntegerNumber(int firstValue,  int SecondValue,  int thirdValue)
+        public static float MaximumFloatNumber(float firstValue,  float SecondValue,  float thirdValue)
         {
             if (firstValue.CompareTo(SecondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
                 firstValue.CompareTo(SecondValue) >= 0 && firstValue.CompareTo(thirdValue) >= 0 ||
