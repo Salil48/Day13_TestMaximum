@@ -8,55 +8,39 @@ namespace GenericsTestMax
         {
             Console.WriteLine("Welcome to Test Maximum Problem using Generics");
 
-            Console.WriteLine("Enter which datatype you want 1)Integer 2)Float 3)String :");
-            int z = Convert.ToInt32(Console.ReadLine());
+            testCases<int> test = new testCases<int>();
 
-            switch (z)
-            {
-                case 1:
-                    Console.WriteLine("Enter the number of elements in array: ");
-                    int n = Convert.ToInt32(Console.ReadLine());
-                    int[] arr = new int[n];
-                    for (int i = 0; i < n; i++)
-                    {
-                        Console.WriteLine("Enter the number  {0} : ", i);
-                        arr[i] = Convert.ToInt32(Console.ReadLine());
-                    }
-                    Maximum<int> test = new Maximum<int>(arr);
-                    test.PrintMaxValue();
-                    break;
+            Console.WriteLine("Given Max Number at 1st Position from {5,4,3} return the Same Number : Test Case 1 ");
+            Console.WriteLine(test.maxi(5, 4, 3));
+            Console.WriteLine("Given Max Number at 2nd Position from {55,88,73} return the Same Number : Test Case 2 ");
+            Console.WriteLine(test.maxi(45, 99, 65));
+            Console.WriteLine("Given Max Number at 3rd Position from {101,447,833} return the Same Number : Test Case 3 ");
+            Console.WriteLine(test.maxi(101, 447, 833));
+            Console.WriteLine("--------------------");
 
-                case 2:
-                    Console.WriteLine("Enter the number of elements in array: ");
-                    int n1 = Convert.ToInt32(Console.ReadLine());
-                    double[] arr1 = new double[n1];
-                    for (int i = 0; i < n1; i++)
-                    {
-                        Console.WriteLine("Enter the number  {0} : ", i);
-                        arr1[i] = Convert.ToDouble(Console.ReadLine());
-                    }
-                    Maximum<double> test1 = new Maximum<double>(arr1);
-                    test1.PrintMaxValue();
-                    break;
+            testCases<float> test2 = new testCases<float>();
 
-                case 3:
-                    Console.WriteLine("Enter the number of elements in array: ");
-                    int n2 = Convert.ToInt32(Console.ReadLine());
-                    string[] arr2 = new string[n2];
-                    for (int i = 0; i < n2; i++)
-                    {
-                        Console.WriteLine("Enter the string  {0} : ", i);
-                        arr2[i] = Console.ReadLine();
-                    }
-                    Maximum<string> test2 = new Maximum<string>(arr2);
-                    test2.PrintMaxValue();
-                    break;
+            Console.WriteLine("Given Max Number at 1st Position from {5.5,4.4,3.73} return the Same Number:Test Case 1 ");
+            Console.WriteLine(test2.maxi(5.5F, 4.4F, 3.3F));
+            Console.WriteLine("Given Max Number at 2nd Position from {55.8,89.76,73.66} return the Same Number:Test Case 2 ");
+            Console.WriteLine(test2.maxi(45.8F, 99.76F, 65.66F));
+            Console.WriteLine("Given Max Number at 3rd Position from {101.56,447.01,833.09} return the Same Number:Test Case 3 ");
+            Console.WriteLine(test2.maxi(101.56F, 434.01F, 703.09F));
+            Console.WriteLine("--------------------");
 
-            }
+            testCases<string> test3 = new testCases<string>();
+
+            Console.WriteLine("Given Max Number at 1st Position from {Peach\",\"Apple\", \"Banana}return the Same Number:Test Case 1 ");
+            Console.WriteLine(test3.maxi("Peach", "Apple", "Banana"));
+            Console.WriteLine("Given Max Number at 2nd Position from {angle\", \"volume\", \"shape} return the Same Number:Test Case 2 ");
+            Console.WriteLine(test3.maxi("angle", "volume", "shape"));
+            Console.WriteLine("Given Max Number at 3rd Position from {lawyer\", \"docter\", \"sofware\"} return the Same Number:Test Case 3 ");
+            Console.WriteLine(test3.maxi("lawyer", "docter", "sofware"));
+            Console.WriteLine("--------------------");
+
+
+
         }
-
-
-
     }
 }   
 
