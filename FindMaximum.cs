@@ -9,31 +9,35 @@ namespace GenericsTestMax
     public class FindMaximum
 
     {
-        public static string MaximumString(string first,  string Second,  string third)
+        public class testCases<T> where T : IComparable
         {
-            if (first.CompareTo(Second) > 0 && first.CompareTo(third) > 0 ||
-                first.CompareTo(Second) >= 0 && first.CompareTo(third) >= 0 ||
-                first.CompareTo(Second) > 0 && first.CompareTo(third) >= 0)
-            {
-                return first;
-            }
+            public T[] value;
 
-            if (Second.CompareTo(first) > 0 && Second.CompareTo(third) > 0 ||
-                Second.CompareTo(first) >= 0 && Second.CompareTo(third) >= 0 ||
-                Second.CompareTo(first) < 0 && Second.CompareTo(third) < 0)
+            public testCases(T[] value)
             {
-                return Second;
+                this.value = value;
             }
-
-            if (third.CompareTo(Second) > 0 && third.CompareTo(first) > 0 ||
-                third.CompareTo(Second) >= 0 && third.CompareTo(first) >= 0 ||
-                third.CompareTo(Second) > 0 && third.CompareTo(first) >= 0)
+            public T[] Sort(T[] values)
             {
-                return third;
+                Array.Sort(values);
+                return values;
             }
-
-            return first;
+            public T Maxvalue(params T[] values)
+            {
+                var sort_val = Sort(values);
+                return sort_val[^1];
+            }
+            public T Maxmethod()
+            {
+                var max = Maxvalue(this.value);
+                return max;
+            }
+            public void toPrint()
+            {
+                var max = Maxvalue(this.value);
+                Console.WriteLine("The Maximum value is :" + max);
+            }
         }
-        
+
     }
 }
