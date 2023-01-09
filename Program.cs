@@ -6,13 +6,13 @@
         {
             Console.WriteLine("Welcome to Test Maximum Problem using Generics");
 
-            int first = 30;
-            int second = 50;
-            int third = 100;
+            float first = 2.6f;
+            float second = 2.3f;
+            float third = 3.3f;
 
-            int val = FindMaximum.MaximumIntegerNumber(first, second, third);
+            float val = FindMaximum.MaximumFloatNumber(first, second, third);
 
-            Console.WriteLine(" The Maximum integer is " + val);
+            Console.WriteLine(" The Maximum float value is " + val);
 
         }
     }
