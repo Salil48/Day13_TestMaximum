@@ -6,13 +6,13 @@
         {
             Console.WriteLine("Welcome to Test Maximum Problem using Generics");
 
-            float first = 2.6f;
-            float second = 2.3f;
-            float third = 3.3f;
+            string first = "Apple";
+            string second = "Banana";
+            string third = "Peach";
 
-            float val = FindMaximum.MaximumFloatNumber(first, second, third);
+            string val = FindMaximum.MaximumString(first, second, third);
 
-            Console.WriteLine(" The Maximum float value is " + val);
+            Console.WriteLine(" The Maximum string character is " + val);
 
         }
     }
