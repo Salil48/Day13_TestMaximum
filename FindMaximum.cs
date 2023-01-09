@@ -8,37 +8,22 @@ namespace GenericsTestMax
 {
     public class FindMaximum
     {
-        public class Maximum<T> where T : IComparable
+        public class testCases<T> where T : IComparable
         {
-            public T[] value;
 
-            public Maximum(T[] value)
+            public T maxi(T a, T b, T c)
             {
-                this.value = value;
-            }
-            public T[] Sort(T[] values)
-            {
-                Array.Sort(values);
-                return values;
-            }
-            public T Maxvalue(params T[] values)
-            {
-                var sort_val = Sort(values);
-                return sort_val[^1];
-            }
-            public T Maxmethod()
-            {
-                var max = Maxvalue(this.value);
-                return max;
-            }
-            public void PrintMaxValue()
-            {
-                var max = Maxvalue(this.value);
-                Console.WriteLine("The Maximum value is :" + max);
+                if (a.CompareTo(b) == 1 && a.CompareTo(c) == 1)
+                    return a;
+                if (b.CompareTo(a) == 1 && b.CompareTo(c) == 1)
+                    return b;
+                if (c.CompareTo(a) == 1 && c.CompareTo(b) == 1)
+                    return c;
+                return a;
+
             }
 
         }
-
-
     }
 }
+
